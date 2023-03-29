@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { nanoid } from 'nanoid'
 import { NotesList, AddNote } from './components'
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 const App = () => {
   const [notes, setNotes] = useState([
     {
@@ -21,6 +23,7 @@ const App = () => {
       date: 'March 13, 2023',
     },
   ])
+
   return (
     <div>
       <NotesList notes={notes} />
