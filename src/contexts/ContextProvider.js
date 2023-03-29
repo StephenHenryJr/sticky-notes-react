@@ -19,7 +19,10 @@ export const ContextProvider = ({ children }) => {
   };
 
   const handleSaveClick = () => {
-    addNote(noteText)
+    if(noteText.trim().length >= 1) {
+      addNote(noteText)
+      setNoteText('')
+    }
   }
 
   const addNote = (text) => {
@@ -31,7 +34,6 @@ export const ContextProvider = ({ children }) => {
       }
     const newNotes = [...notes, newNote]
     setNotes(newNotes)
-    setNoteText('')
   }
 
   return (
