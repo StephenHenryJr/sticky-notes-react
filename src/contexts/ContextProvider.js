@@ -5,11 +5,11 @@ const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      text: "This is a dummy note...",
-      date: "March 13, 2023",
-    },
+    // {
+    //   id: nanoid(),
+    //   text: "This is a dummy note...",
+    //   date: "March 13, 2023",
+    // },
   ]);
 
   const [noteText, setNoteText] = useState("");
@@ -23,6 +23,11 @@ export const ContextProvider = ({ children }) => {
       addNote(noteText)
       setNoteText('')
     }
+  }
+
+  const handleDeleteClick = (id) => {
+    const newNotes = notes.filter(note => note.id !== id);
+    setNotes(newNotes)
   }
 
   const addNote = (text) => {
@@ -46,6 +51,7 @@ export const ContextProvider = ({ children }) => {
         handleChange,
         handleSaveClick,
         addNote,
+        handleDeleteClick,
       }}
     >
       {children}
