@@ -5,7 +5,7 @@ import { Note, AddNote } from './index'
 // whatever you pass in as notes will be looped over
 const NotesList = ({notes}) => {
   return (
-    <div className='notes-list p-4 gap-4 justify-items-center'>
+    <div className='notes-list p-16 gap-4 '>
       {
         notes.map((note) => <Note note={note}/>)
       }

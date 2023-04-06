@@ -14,10 +14,16 @@ export const ContextProvider = ({ children }) => {
 
   const [noteText, setNoteText] = useState("");
 
+  const [darkMode, setDarkMode] = useState(false)
+
+  const [showColorPicker, setShowColorPicker] = useState(false)
+
+  const [currentColor, setCurrentColor] = useState('#f4d06f')
+
   const handleChange = (e) => {
     setNoteText(e.target.value);
   };
-
+  
   const handleSaveClick = () => {
     if(noteText.trim().length >= 1) {
       addNote(noteText)
@@ -28,6 +34,10 @@ export const ContextProvider = ({ children }) => {
   const handleDeleteClick = (id) => {
     const newNotes = notes.filter(note => note.id !== id);
     setNotes(newNotes)
+  }
+
+  const handleShowColorPickerClick = () => {
+    setShowColorPicker(!showColorPicker)
   }
 
   const addNote = (text) => {
@@ -52,6 +62,10 @@ export const ContextProvider = ({ children }) => {
         handleSaveClick,
         addNote,
         handleDeleteClick,
+        darkMode, setDarkMode,
+        showColorPicker, setShowColorPicker,
+        handleShowColorPickerClick,
+        currentColor, setCurrentColor
       }}
     >
       {children}

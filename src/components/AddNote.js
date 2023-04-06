@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const AddNote = () => {
