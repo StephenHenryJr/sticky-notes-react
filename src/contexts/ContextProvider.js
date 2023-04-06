@@ -20,6 +20,12 @@ export const ContextProvider = ({ children }) => {
 
   const [currentColor, setCurrentColor] = useState('#f4d06f')
 
+  const setColor = (color) => {
+    setCurrentColor(color);
+    localStorage.setItem('colorMode', color)
+    // setThemeSettings(false)
+  }
+
   const handleChange = (e) => {
     setNoteText(e.target.value);
   };
@@ -65,7 +71,8 @@ export const ContextProvider = ({ children }) => {
         darkMode, setDarkMode,
         showColorPicker, setShowColorPicker,
         handleShowColorPickerClick,
-        currentColor, setCurrentColor
+        currentColor, setCurrentColor,
+        setColor
       }}
     >
       {children}

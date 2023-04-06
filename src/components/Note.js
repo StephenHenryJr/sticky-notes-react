@@ -24,6 +24,7 @@ const Note = ({ note }) => {
     currentColor,
     showColorPicker,
     handleShowColorPickerClick,
+    setColor,
   } = useStateContext();
 
   return (
@@ -40,6 +41,11 @@ const Note = ({ note }) => {
           <h3 className="text-sm text-center border-gray-300 border-b">
             Select Color
           </h3>
+          <div className="flex justify-between wrap p-1 mt-1">
+            {backgroundColors.map((color, index) => (
+              <button className="w-4 h-4 rounded-full" style={{background: color.color}}></button>
+            ))}
+          </div>
         </div>
       )}
       <span>{note.text}</span>
