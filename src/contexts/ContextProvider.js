@@ -18,7 +18,7 @@ export const ContextProvider = ({ children }) => {
 
   const [showColorPicker, setShowColorPicker] = useState(false)
 
-  const [currentColor, setCurrentColor] = useState('#f4d06f')
+  const [currentColor, setCurrentColor] = useState('#FDFFB6')
 
   const setColor = (color) => {
     setCurrentColor(color);

@@ -5,18 +5,30 @@ import { useStateContext } from "../contexts/ContextProvider";
 
 const backgroundColors = [
   {
-    color: '#f4d06f'
+    color: "#FDFFB6",
   },
   {
-    color: '#ab87ff'
+    color: "#FFD6A5",
   },
   {
-    color: '#fface4'
+    color: "#FFADAD",
   },
   {
-    color: '#e3655b'
+    color: "#CAFFBF",
   },
-]
+  {
+    color: "#A0C4FF",
+  },
+  {
+    color: "#BDB2FF",
+  },
+  {
+    color: "#FFC6FF",
+  },
+  {
+    color: "#FFFFFC",
+  },
+];
 
 const Note = ({ note }) => {
   const {
@@ -41,9 +53,13 @@ const Note = ({ note }) => {
           <h3 className="text-sm text-center border-gray-300 border-b">
             Select Color
           </h3>
-          <div className="flex justify-between wrap p-1 mt-1">
+          <div className="flex-wrap justify-center  p-1 mt-1">
             {backgroundColors.map((color, index) => (
-              <button className="w-4 h-4 rounded-full" style={{background: color.color}}></button>
+              <button
+                className="w-4 h-4 rounded-full mx-1"
+                style={{ background: color.color }}
+                onClick={() => setColor(color.color)}
+              ></button>
             ))}
           </div>
         </div>
